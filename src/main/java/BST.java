@@ -36,72 +36,6 @@ public class BST {
         }
     }
 
-    public void inorder() {
-        inorder(root);
-    }
-
-    private void inorder(Node root) {
-        if (isEmpty()) {
-            System.out.println("Tree is empty!");
-        } else if (root == null) {
-            return;
-        }
-        inorder(root.getLeft());
-        System.out.print(root.getData() + " -> ");
-        inorder(root.getRight());
-    }
-
-    public void preorder() {
-        preorder(root);
-    }
-
-    private void preorder(Node root) {
-        if (isEmpty()) {
-            System.out.println("Tree is empty!");
-        } else if (root == null) {
-            return;
-        }
-        System.out.print(root.getData() + " -> ");
-        preorder(root.getLeft());
-        preorder(root.getRight());
-    }
-
-    public void postorder() {
-        postorder(root);
-    }
-
-    private void postorder(Node root) {
-        if (isEmpty()) {
-            System.out.println("Tree is empty");
-        } else if (root == null) {
-            return;
-        }
-        postorder(root.getLeft());
-        postorder(root.getRight());
-        System.out.print(root.getData() + " -> ");
-    }
-
-    public ArrayList traversing() {
-        ArrayList list = new ArrayList();
-        if (isEmpty()) {
-            System.out.println("Empty");
-        } else {
-            traversing(root, list);
-        }
-        return list;
-    }
-
-    private void traversing(Node root, ArrayList list) {
-        if (root == null) {
-            return;
-        } else {
-            traversing(root.getLeft(), list);
-            list.add(root.getData());
-            System.out.print(root.getData() + " -> ");
-            traversing(root.getRight(), list);
-        }
-    }
-
     public boolean contains(int data) {
         Node current = root;
         while (current != null) {
@@ -159,8 +93,7 @@ public class BST {
         return sec;
     }
 
-    public int sumOdd(Node node)
-    {
+    public int sumOdd(Node node){
         int sum = 0;
         if(node != null) {
             if((node.getData() % 2) != 0) {
@@ -272,6 +205,5 @@ public class BST {
             System.out.print(num + " ");
         }
     }
-
 
 }
